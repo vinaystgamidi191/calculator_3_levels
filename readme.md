@@ -1,64 +1,74 @@
-# 3 Levels Of Calculator Homework
+# Project: Command Pattern and Plugins Homework 5
 
-For this homework. what you need to do is to try to make the most complete calculator that can add, subtract, multiply, divide and store a history of calulations.  The purpose of this assignment is to introduce you understand the principles of object oriented programming, unit testing, and design principles such as SOLID, DRY, GRASP, and Seperation of concerns.  Its important to understand how to properly organize your code using the professional "grammer" of programming and not just the syntax of if statements and loops.
+## Introduction
 
-## Submission Instructions
-1.  Make a new repo from scratch and set it up like last time, so you can run pytest, pylint, and coverage.  You could even start with a copy of your last repo.
+This project focuses on the development of an interactive command-line application that operates continuously, transitioning from a single-execution script to a fully functional application. Through this assignment, you will explore the command pattern, learn how to dynamically load commands using a simple plugin architecture, and understand the appropriate use of exceptions versus conditional statements to manage invalid data inputs. This unit lays the foundational skills for application development, preparing you for the midterm project, which requires a thorough explanation of your program's architecture, design patterns, and functionality.
 
-2.  Submit a link to your repository to Canvas when your finished.
+## Project Enhancements from Assignment 4
 
-## To get my code to run / Install Instructions
+Incorporate the functionalities discussed in the lecture videos to your previous assignment. This includes transforming your calculator program into an interactive application using the command pattern and REPL (Read, Evaluate, Print, Loop) principles.
 
-1.  Clone the repo
-2.  CD into the repo directory
-3.  Create the virtual environment
-4.  Activate the virtual environment
-5.  Install the requirements with pip or pip3 install requirements.txt
+### Submission Requirements
 
-**NOTE: YOU NEED TO CHECKOUT BRANCH "PART3" TO SEE THE DETAILED CODE COMMENTS**
+1. **Initial Setup:**
+   - Watch the lecture on the main/command branch, which covers REPL and the command pattern. [Instructor Video: Command Pattern Lecture](https://youtu.be/3DVUN091T5g). Integrate these concepts with your existing program to add four basic commands: add, subtract, multiply, and divide, making your calculator interactive.
 
-Basic tips:
-* Don't repeat yourslf #1 rule
-* Separate each thing the program needs to do, so its organized and your functions only do one thing
+2. **(Bonus) Implement a Menu Command:**
+   - Create a menu command that displays available commands from the command dictionary at the application's start and when the user types "menu." This is a self-guided challenge to deepen your understanding of dynamic command integration.
 
+3. **Testing and Code Coverage:**
+   - With the calculator commands integrated, update and expand your tests to achieve 100% test coverage, ensuring your program's functionality is fully verified.
 
-You should create new branches for each version of your progarm and work from the most simple, which is the first branch (main) and then keep upgrading your program until you have all of the requirements met.  Please don't just copy and paste my final program, or you will not learn anything.  Soon you will have to design your own program without any examples, which will be your mid-term.  I have commented the code with explanations, so you can understand it better.   
+4. **Plugin Architecture:**
+   - View the lecture on implementing plugins [Instructor Video: Plugins Lecture](https://youtu.be/c2PmjazGW2w). Learn to refactor your program to automatically load plugins, facilitating easy command additions without manual updates.
 
-In this repository, you can see that there are 3 branches:
+5. **(Bonus) Explore Multiprocessing Capabilities:**
+   - Investigate adding multiprocessing features to enable commands/plugins to run on separate cores. This enhancement is a forward-looking feature that prepares your application for future scalability and performance improvements.
 
-1.  Main - Basic Calculator with functions
-2.  Part 2 - Intermediate Calculator with static methods on Calculator class and instance methods on Calculation class to perform operations on the data in the calculation instance.
-3.  Part 3 - Advanced Calculator **Has the detailed comments to read**
+## Grading Rubric (Total: 100 Points)
 
-## Instructor Video and Required Readings
+- **Testing (50 Points):**
+  - Comprehensive test coverage near 100% average coverage: 50 Points
 
-1.  Instructor Video - [here](https://youtu.be/YrtBikBdZOE)
-2.  Concept Explanatinos - [here](oopconcepts.md)
+- **Functionality (50 Points):**
+  - Implementation of command pattern and REPL: 10 Points
+  - Interactive calculator commands (add, subtract, multiply, divide): 20 Points
+  - Successful plugin architecture integration for dynamic command loading: 20 
+Ensure that the functionality aligns with the requirements and demonstrates the effective use of the command pattern and plugin architecture as outlined in the instructor videos.
 
-## Notes on Advanced Calculator
-The advanced calculator in part 3 contains static methods on the Calculator, instance methods on the Calculation, and class methods on the Calculations class.  In addition, it has more advanced testing that uses parameterized test data and a fixture to make it easy to setup each test with consistent data.  There are also modifciations to the .pylintrc file to control pylint's code analysis and I disable pylint errors in the calculator/calculation.py file by putting this code at the top of the file, which you can also use inside a specific function to disable a pylint check for a specific file.   You sometimes need to disable pylint when you know you are doing the correct thing, but that for some reason pylint doesn't understand.  It's better to disable it at the function or file level than the global level because you never know when you really do want it to tell you the style error.
+## Recommended Viewing
 
-**"# pylint: disable=unnecessary-dunder-call, invalid-name"**
+To complement the project work, the following videos are highly recommended:
 
+1. [Python Loop Performance](https://www.youtube.com/watch?v=Qgevy75co8c) - Insights into loop efficiency.
+2. [Habits of The Good Programmer](https://www.youtube.com/watch?v=q1qKv5TBaOA&t=2s) - Design patterns and best practices.
+3. [Global Interpreter Lock and Multicore Issues in Python](https://www.youtube.com/watch?v=m4zDBk0zAUY) - Python concurrency explained by its inventor.
+4. [Design Patterns Explained](https://www.youtube.com/watch?v=tv-_1er1mWI) - General programming design patterns.
+5. [5 Patterns in Python](https://www.youtube.com/watch?v=YMAwgRwjEOQ) - Applying patterns in Python.
 
-## The objective of this homework assignment is to create your own 
+## Project Setup
 
-Your goal in this homeowrk is to design your own calculator from scratch using the techniuqes that you can figure out based on my examples.  Your calculator needs to do the following:
+1. Clone the repository.
+2. CD into the project folder.
+3. Create and activate the virtual environment (VE).
+4. Install the required libraries.
 
-1. Add, Subtract, Multiply, and Divide
-2. Throw exception for divide by zero and test that the exception is thrown
-3. Use at least one class, at least one static method, at least one class method.
-4. It needs to  store a history of calculations, so that you can retrieve the last calculation, add a calculation, 
-5. It needs to have 100% test coverage, pass pylint, and you need to do your best to not repeat any lines of code.  
-6.  You should use type hints for input parameter types and return types.
-7.  Implement a pytest fixture to test the 
+## Testing Commands
 
-## Grading:
+- Run all tests with `pytest`.
+- To test a specific file, use `pytest tests/test_main.py`.
+- For linting and coverage, `pytest --pylint --cov` commands can be used separately.
 
-1.  20  Points for (add subtract, multiply, divide) 
-2.  10 Points for exception throwing and testing on divide by zero
-3.  30 points each for using static, class, and instance methods correctly
-4.  5 Points for having a calculation class that stores the arthitmentic operation in a instance property.
-5.  15 Points for having a calculation history to store calculation instances
-6.  10 Points for having the convenience methods on the calculations class to manage the history
-7.  10 Points for using parameterized test data
+## Installed Libraries
+
+1. [Pytest](https://docs.pytest.org/en/8.0.x/)
+2. [Faker](https://faker.readthedocs.io/en/master/)
+3. [Pytest Coverage](https://pytest-cov.readthedocs.io/en/latest/readme.html)
+4. [Pytest Pylint](https://pylint.readthedocs.io/en/stable/development_guide/contributor_guide/tests/launching_test.html)
+
+## Adding a Library
+
+1. Ensure you're in the correct VE; if unsure, run "deactivate".
+2. Activate the VE.
+3. Update the requirements file with `pip freeze > requirements.txt`.
+
